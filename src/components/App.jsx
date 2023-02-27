@@ -73,6 +73,7 @@ class App extends Component {
       largeImageURL,
       loadMore,
     } = this.state;
+    console.log(items);
     return (
       <>
         {showModal && (
@@ -83,7 +84,12 @@ class App extends Component {
         {loading && <p>...Loading</p>}
         {error && <p>{error}</p>}
         <Searchbar onSubmit={this.updateSearch} />
-        <ImageGallery items={items} showModal={this.showModal} />
+        {items.length > 0 ? (
+          <ImageGallery items={items} showModal={this.showModal} />
+        ) : (
+          <></>
+        )}
+
         {search && loadMore ? (
           <button onClick={this.onLoadMore}>Load more</button>
         ) : (

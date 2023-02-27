@@ -131,6 +131,7 @@ img {
   margin: 0;
 }
 header {
+  background-image: linear-gradient(to left, blue, transparent, blue);
   padding: 20px;
   border: 1px solid blue;
   display: flex;
@@ -140,11 +141,12 @@ button {
   display: block;
   margin: 5px auto;
   width: 80px;
-  border: 1px solid blue;
-  background-color: blue;
+  border: 1px solid rgb(255, 0, 247);
+  background-color: rgba(0, 0, 255, 0.322);
 }
 button :hover {
   cursor: pointer;
+  color: white;
 }
 input {
   padding-left: 10px;

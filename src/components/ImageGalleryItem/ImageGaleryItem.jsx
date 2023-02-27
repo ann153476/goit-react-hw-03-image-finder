@@ -11,7 +11,7 @@ const ImageGalleryItem = ({ imageURL, tags, showModal, largeImageURL }) => {
 ImageGalleryItem.propTypes = {
   imageURL: PropTypes.string.isRequired,
   tags: PropTypes.string.isRequired,
-  showModal: PropTypes.string.isRequired,
+  showModal: PropTypes.func.isRequired,
   largeImageURL: PropTypes.string.isRequired,
 };
 
