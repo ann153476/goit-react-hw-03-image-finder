@@ -21,8 +21,8 @@
   padding: 5px;
   color: rgb(255, 0, 247);
   position: absolute;
-  top: 15;
-  left: 15;
+  top: 5px;
+  right: 5px;
   z-index: 999;
   cursor: pointer;
 }

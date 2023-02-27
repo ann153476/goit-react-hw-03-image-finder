@@ -6,10 +6,27 @@ import s from './modal-styles.module.css';
 const modalRoot = document.getElementById('modal-root');
 
 class Modal extends Component {
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
+  handleoverlayclick = e => {
+    if (e.target === e.currentTarget) {
+      this.props.onClose();
+    }
+  };
+  handleKeyDown = e => {
+    if (e.code === 'Escape') {
+      this.props.onClose();
+    }
+  };
   render() {
     const { children } = this.props;
     return createPortal(
-      <div className={s.overlay}>
+      <div className={s.overlay} onClick={this.handleoverlayclick}>
         <div className={s.modal}>
           {children}
           <span onClick={this.props.onClose} className={s.close}>
@@ -23,7 +40,7 @@ class Modal extends Component {
 }
 
 Modal.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
 

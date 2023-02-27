@@ -24,11 +24,7 @@ class ImageGallery extends Component {
 ImageGallery.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      largeImageURL: PropTypes.string.isRequired,
-      showModal: PropTypes.func.isRequired,
-      key: PropTypes.string.isRequired,
-      imageURL: PropTypes.string.isRequired,
-      tags: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ),
 };
